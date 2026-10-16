@@ -1,0 +1,50 @@
+# 飞书智能助手项目依赖
+
+# Web框架
+fastapi==0.110.0
+uvicorn==0.28.0
+
+# 数据验证
+pydantic==2.6.0
+pydantic-settings==2.1.0
+
+# JWT认证
+python-jose[cryptography]==3.3.0
+cryptography==42.0.0
+
+# 环境变量
+python-dotenv==1.0.0
+
+# LangChain AI框架
+langchain>=0.1.0
+langchain-openai>=0.1.0
+langchain-core>=0.1.7
+
+# HTTP请求
+requests==2.31.0
+httpx==0.27.0
+
+# Web安全
+werkzeug==3.0.0
+slowapi==0.1.9
+
+# 数据处理
+numpy==1.26.0
+
+# 数据库驱动（MySQL）
+pymysql==1.1.0
+
+# 字符编码处理
+charset-normalizer==3.3.2
+
+# 可选：HuggingFace嵌入模型（备用方案）
+# sentence-transformers==2.2.2
+# torch==2.1.0
+
+# 测试框架
+pytest==8.0.0
+pytest-asyncio==0.23.0
+pytest-mock==3.12.0
+
+# 可选：向量数据库
+# chromadb==0.4.22
