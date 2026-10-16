@@ -1,6 +1,7 @@
 # 飞书智能助手项目依赖
+# 2026-10-16 已按源码实际 import 补全（原文件缺少 langgraph / faiss / sqlparse / jieba / pdfminer / fastapi-limiter / redis 等）
 
-# Web框架
+# Web 框架
 fastapi==0.110.0
 uvicorn==0.28.0
 
@@ -8,43 +9,54 @@ uvicorn==0.28.0
 pydantic==2.6.0
 pydantic-settings==2.1.0
 
-# JWT认证
+# JWT 认证
 python-jose[cryptography]==3.3.0
 cryptography==42.0.0
 
 # 环境变量
 python-dotenv==1.0.0
 
-# LangChain AI框架
+# LangChain / LangGraph 编排
 langchain>=0.1.0
 langchain-openai>=0.1.0
 langchain-core>=0.1.7
+langgraph>=0.0.40
 
-# HTTP请求
+# 大模型 SDK（DashScope OpenAI 兼容模式）
+openai>=1.14.0
+dashscope>=1.17.0
+
+# HTTP 请求
 requests==2.31.0
 httpx==0.27.0
 
-# Web安全
+# Web 安全与限流（源码使用 fastapi_limiter + Redis；未使用 slowapi）
 werkzeug==3.0.0
-slowapi==0.1.9
+fastapi-limiter==0.1.6
+redis>=5.0.0
 
-# 数据处理
+# 数据处理与检索
 numpy==1.26.0
+faiss-cpu==1.8.0
+sqlparse==0.5.0
+jieba==0.42.1
 
-# 数据库驱动（MySQL）
+# 文档解析
+pdfminer.six==20231228
+PyMuPDF==1.24.2
+python-docx==1.1.0
+openpyxl==3.1.2
+
+# 数据库驱动（源码支持 MySQL / SQLite / PostgreSQL）
 pymysql==1.1.0
+aiomysql>=0.2.0
+aiosqlite>=0.19.0
+asyncpg>=0.29.0
 
 # 字符编码处理
 charset-normalizer==3.3.2
-
-# 可选：HuggingFace嵌入模型（备用方案）
-# sentence-transformers==2.2.2
-# torch==2.1.0
 
 # 测试框架
 pytest==8.0.0
 pytest-asyncio==0.23.0
 pytest-mock==3.12.0
-
-# 可选：向量数据库
-# chromadb==0.4.22
